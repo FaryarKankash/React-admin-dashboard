@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react"
 import ReactApexChart from "react-apexcharts"
+import { ApexOptions } from "apexcharts";
+import { CircularProgress } from "@mui/material";
 
 const LineChart = () => {
-    const [series, setSeries] = useState<{series: any}>()
-    const [option, setOption] = useState<{options: {}}>()
+    const [series, setSeries] = useState<ApexOptions>()
+    const [option, setOption] = useState<ApexOptions>()
 
     const getEntity = () => {
         setSeries({ series: [{
             name: "Desktops",
-            data: [10, 51, 69, 148]
+            data: [25, 51, 69, 148]
         }] })
         setOption({
-            options: {
                 chart: {
                   height: 350,
                   type: 'line',
@@ -41,17 +42,18 @@ const LineChart = () => {
                         enabled: false,
                         formatter: undefined,
                         offsetY: 0,
-                        style: {
-                          fontSize: 0,
-                          fontFamily: 0,
-                        },
+                        style: {},
                     },
+                    axisTicks: {
+                        show: false
+                    }
                 },
                 yaxis: {
                     show: false
-                }
+                },
+                colors: ["#2C74B3"]
               },
-        })
+        )
     }
 
     useEffect(() => {
@@ -62,11 +64,11 @@ const LineChart = () => {
 
     return(
         <>
-        <h4 className="p-2">Work time:</h4>
+        <h5 className="p-2">Progress time:</h5>
         <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className="pt-1 py-3">
+            <div className="pt-1 py-1">
             {
-                series?(<ReactApexChart type="line" width={"100%"} class="mb-2" series={series?.series} options={option?.options}  />):(<h1>Loading...</h1>)
+                series?(<ReactApexChart type="line" width={"100%"} class="mb-2" series={series?.series} options={option}  />):(<CircularProgress color="secondary" />)
             }
             </div>
         </div>
