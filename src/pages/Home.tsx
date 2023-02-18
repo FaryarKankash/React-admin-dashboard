@@ -2,6 +2,7 @@ import * as m from "@mui/material"
 import RadialChart from "../components/Home/RadialChart"
 import LineChart from "../components/Home/WorkTime"
 import BarChart from "../components/Home/BarChart"
+import TaskTable from "../components/Home/TaskTable"
 
 const Home = () => {
     return(
@@ -25,7 +26,7 @@ const Home = () => {
       </div>
       <div className="col-12 mt-4">
         <m.Card>
-          <h1>Table</h1>
+          <TaskTable />
         </m.Card>
       </div>
       </>

@@ -45,7 +45,7 @@ const BarChart = () => {
               yaxis: {
                 show: false
               },
-              colors:["#E96479"]
+              colors:["#F05454"]
             },
         )
     }
