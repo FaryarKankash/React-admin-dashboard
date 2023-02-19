@@ -7,6 +7,7 @@ const RadialChart = () => {
     const [series, setSeries] = useState<ApexOptions>()
     const [option, setOption] = useState<ApexOptions>()
 
+    //todo tooltip style
     const getEntity = () => {
         setSeries({ series: [77.7] })
         setOption({
