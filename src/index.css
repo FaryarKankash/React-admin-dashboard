@@ -12,3 +12,28 @@ p {
 header {
   border-radius: 4px ;
 }
+
+.MuiInputBase-root {
+  border-color: #fff;
+}
+
+.MuiFormControl-root {
+  border-color: #fff !important;
+}
+
+.noneStyle-link {
+  text-decoration: 'none' !important;
+  color: #fff;
+}
+
+.list-items {
+  background-color: #2b3f54 !important;
+  border-radius: 5px !important;
+  position: relative !important;
+  left: 0 !important;
+  transition: left ease 0.5s !important;
+}
+
+.list-items:hover {
+  left: 5px !important;
+}

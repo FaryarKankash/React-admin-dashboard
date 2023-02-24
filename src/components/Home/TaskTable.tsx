@@ -72,11 +72,11 @@ export default function TaskTable() {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">Time left</TableCell>
-            <TableCell align="right">Start date</TableCell>
-            <TableCell align="right">Category</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right"></TableCell>
+            <TableCell align="center">Time left</TableCell>
+            <TableCell align="center">Start date</TableCell>
+            <TableCell align="center">Category</TableCell>
+            <TableCell align="center">Status</TableCell>
+            <TableCell align="center"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -88,10 +88,10 @@ export default function TaskTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.timeLeft}</TableCell>
-              <TableCell align="right">{row.StartDate}</TableCell>
-              <TableCell align="right"><Chip color='success' size='small' label={row.category} /></TableCell>
-              <TableCell align="right">
+              <TableCell align="center">{row.timeLeft}</TableCell>
+              <TableCell align="center">{row.StartDate}</TableCell>
+              <TableCell align="center"><Chip color='success' size='small' label={row.category} /></TableCell>
+              <TableCell align="center">
                 {
                     row.status.Todo?(<Chip color='error' size='small' label={row.status.Todo} />):
                     (row.status.Done?(<Chip color='success' size='small' label={row.status.Done} />):
@@ -101,7 +101,7 @@ export default function TaskTable() {
               </TableCell>
               <TableCell align="right">
                 <Button disableElevation size='small' className='mx-1' variant="contained" color='secondary'>Delete</Button>
-                <Button disableElevation size='small' className='mx-1' variant="contained" color='info'>Update</Button>
+                <Button disableElevation size='small' className='mx-1 mt-md-0 mt-1' variant="contained" color='info'>Update</Button>
               </TableCell>
             </TableRow>
           ))}

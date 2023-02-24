@@ -9,7 +9,7 @@ const BarChart = () => {
 
     const getEntity = () => {
         setSeries({ series: [{
-            data: [400, 430, 500, 400, 1100, 1200, 1380]
+            data: [400, 430, 780, 400, 1100, 1200, 1380]
         }] })
         setOption({
             chart: {

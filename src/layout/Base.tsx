@@ -23,7 +23,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
+import Home from '@mui/icons-material/Home';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -113,7 +115,7 @@ export default function BaseLayout() {
       }
 
       setState({ ...state, [anchor]: open });
-    };
+  };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -199,31 +201,29 @@ export default function BaseLayout() {
             onClose={toggleDrawer('left', false)}
             onOpen={toggleDrawer('left', true)}
           >
-            <div className='px-4 pt-2'>
+            <div className='pt-2'>
                 <List>
-                  {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                      <ListItemButton>
-                        <ListItemIcon>
-                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-                <Divider />
-                <List>
-                  {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                      <ListItemButton>
-                        <ListItemIcon>
-                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
+                    <Link to={`/`} style={{ textDecoration: 'none' , color: "#fff"}} >
+                      <ListItem key={'Home'} >
+                        <ListItemButton className='px-5 list-items'>
+                          <ListItemIcon>
+                            <Home />
+                          </ListItemIcon>
+                          <ListItemText primary={'Home'} />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
+
+                    <Link to={`/${'task'}`} style={{ textDecoration: 'none' , color: "#fff"}} >
+                      <ListItem key={'task'} >
+                        <ListItemButton className='px-5 list-items'>
+                          <ListItemIcon>
+                            <DocumentScannerIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={'Task'} />
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
                 </List>
             </div>
           </SwipeableDrawer>
@@ -248,7 +248,7 @@ export default function BaseLayout() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Admin panel
           </Typography>
           <Search>
             <SearchIconWrapper>
